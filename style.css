@@ -1,0 +1,27 @@
+.cabecalho {
+    background-color: gray;
+    height: 60px;
+}
+
+.caixa{
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cabecalho img {
+    position: relative;
+    height: 60px;
+}
+
+.botoesCabecalho {
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.botoesCabecalho li{
+    text-decoration: none;
+    display: inline;
+    margin: 10px;
+}
