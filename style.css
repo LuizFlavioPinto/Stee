@@ -63,15 +63,15 @@ html{
     line-height: 65px;
     font-size: 20px;
     color: whitesmoke;
-    font-weight: 500;
     padding-left: 40px;
     box-sizing: border-box;
     border-top: 1px solid rgba(255,255,255,.1);
-    transition: .4s;
+    transition: .3s;
 }
 
 .barraLateral li{
     font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
 }
 
 .barraLateral ul li:hover a{
@@ -116,7 +116,6 @@ label #cancel {
 
 #check:checked ~ label #cancel {
     right: 205px;
-    display: block;
 }
 
 @media (max-width: 600px){
