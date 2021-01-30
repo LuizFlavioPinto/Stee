@@ -1,3 +1,7 @@
+html{
+    overflow-x:hidden;
+}
+
 .cabecalho {
     background-color: rgb(0,73,148);
     height: 60px;
@@ -11,7 +15,7 @@
 
 .cabecalho img {
     position: relative;
-    height: 60px;
+    height: 57px;
     cursor: pointer;
 }
 
@@ -41,17 +45,81 @@
     cursor: pointer;
 }
 
-.menuToggle {
-    display: none;
-    position: absolute;
+.barraLateral {
+    position: fixed;
     right: 0;
-    height: 60px;
-    width: 60px;
-    font-size:30px;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(0, 73, 148);
+    transition: all .5s ease;
+}
+
+.barraLateral ul a{
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: 500;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+    transition: .4s;
+}
+
+.barraLateral li{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.barraLateral ul li:hover a{
+    padding-left: 50px;
+}
+
+#check{
+    display: none;
+}
+
+label #btn,label #cancel{
+    position: absolute;
     cursor: pointer;
+}
+
+label #btn {
+    display: none;
+    right: 40px;
+    top: 5px;
+    font-size: 50px;
+    color: whitesmoke;
+    transition: all .5s;
+}
+
+label #cancel {
+    z-index: 1111;
+    right: -205px;
+    top: 65px;
+    font-size: 30px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .barraLateral {
+    right: 0;
+}
+
+#check:checked ~ label #btn {
+    right: 200px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+    right: 205px;
+    display: block;
 }
 
 @media (max-width: 600px){
     .botoesCabecalho{display: none;}
-    .menuToggle{display: inline;}
+    label #btn{display: block;}
 }
