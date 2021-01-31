@@ -83,12 +83,12 @@ html{
 }
 
 label #btn,label #cancel{
+    display: none;
     position: absolute;
     cursor: pointer;
 }
 
 label #btn {
-    display: none;
     right: 40px;
     top: 5px;
     font-size: 50px;
@@ -120,5 +120,5 @@ label #cancel {
 
 @media (max-width: 600px){
     .botoesCabecalho{display: none;}
-    label #btn{display: block;}
+    label #btn, label #cancel{display: block;}
 }
