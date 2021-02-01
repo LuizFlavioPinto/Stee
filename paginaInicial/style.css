@@ -1,3 +1,5 @@
+/* Cabeçalho */
+
 html{
     overflow-x: hidden;
 }
@@ -47,6 +49,7 @@ html{
 
 .barraLateral {
     position: fixed;
+    display: none;
     right: 0;
     right: -200px;
     width: 200px;
@@ -90,7 +93,7 @@ label #btn,label #cancel{
 
 label #btn {
     right: 40px;
-    top: 5px;
+    top: 3px;
     font-size: 50px;
     color: whitesmoke;
     transition: all .5s;
@@ -120,5 +123,42 @@ label #cancel {
 
 @media (max-width: 600px){
     .botoesCabecalho{display: none;}
-    label #btn, label #cancel{display: block;}
+    label #btn, label #cancel, .barraLateral{display: block;}
 }
+
+@media (max-width: 200px){
+    label #btn, label #cancel, .barraLateral{display: none}
+}
+
+/* Slider */
+
+.slider {
+    display: flex;
+    position: relative;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    height: 55vw;
+    max-height: 350px;
+    margin: auto;
+}
+
+.slider img, .slider img a{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 800ms;
+}
+
+.slider img.selected {
+    opacity: 1;
+}
+
+/* Combos */
+
