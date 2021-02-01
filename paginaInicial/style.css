@@ -145,7 +145,7 @@ label #cancel {
     margin: auto;
 }
 
-.slider img, .slider img a{
+.slider img{
     opacity: 0;
     position: absolute;
     width: 100%;
