@@ -1,3 +1,19 @@
+/* Correção erro menu lateral */
+
+window.onscroll = esconderBarraLateral
+let checkBox = document.getElementById('check'),
+    lastScrollTop = 0
+
+    
+function esconderBarraLateral () {
+    if (this.scrollY === lastScrollTop) return;
+    
+    checkBox.checked && this.scrollY > lastScrollTop ? checkBox.checked = false : checkBox.checked
+    lastScrollTop = this.scrollY;
+}
+
+/* Slider */
+
 let time = 2000, 
     currentImageIndex = 0,
     images = document.querySelectorAll('.slider img'),
