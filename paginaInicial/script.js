@@ -54,7 +54,7 @@ window.addEventListener('load', start)
     {
         img: `<img src="" alt="Foto combo">`,
         nome : "combo estadual",
-        preco : 500
+        preco : 5000
     },
     {
         img: `<img src="" alt="Foto combo individual">`,
