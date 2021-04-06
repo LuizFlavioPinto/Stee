@@ -9,7 +9,6 @@
 
 html{
     overflow-x: hidden;
-
 }
 
 .cabecalho {
@@ -27,6 +26,7 @@ html{
     position: relative;
     height: 57px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .botoesCabecalho {
@@ -97,7 +97,7 @@ html{
     display: none;
 }
 
-label #btn,label #cancel{
+label #btn{
     display: none;
     position: absolute;
     cursor: pointer;
@@ -109,37 +109,20 @@ label #btn {
     font-size: 50px;
     color: whitesmoke;
     transition: all .5s;
-}
-
-label #cancel {
-    z-index: 1111;
-    right: -205px;
-    top: 65px;
-    font-size: 30px;
-    transition: all .5s ease;
+    z-index: 2;
 }
 
 #check:checked ~ .barraLateral {
     right: 0;
 }
 
-#check:checked ~ label #btn {
-    right: 200px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-#check:checked ~ label #cancel {
-    right: 205px;
-}
-
 @media (max-width: 600px){
-    .botoesCabecalho{display: none;}
-    label #btn, label #cancel, .barraLateral{display: block;}
+    .botoesCabecalho, ::-webkit-scrollbar{display: none;}
+    label #btn, .barraLateral{display: block;}
 }
 
 @media (max-width: 275px){
-    label #btn, label #cancel, .barraLateral{display: none}
+    label #btn, .barraLateral{display: none}
 }
 
 /* Slider */
@@ -172,6 +155,18 @@ label #cancel {
 }
 
 /* Combos */
+
+.cardsCombos{
+    display: flex;
+    justify-content: center;
+}
+
+.produto {
+    padding: 20px;
+    margin: 10px;
+    border: 3px solid black;
+    width: 40%;
+}
 
 /* Viaje conosco */
 

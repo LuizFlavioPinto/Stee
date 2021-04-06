@@ -1,32 +1,34 @@
-/* Correção erro menu lateral */
+/* Bloquear rolagem da página ao abrir barra lateral*/
 
-window.onscroll = esconderBarraLateral
-let checkBox = document.getElementById('check'),
-    lastScrollTop = 0
+const checkBox = document.getElementById('check')
 
-    
-function esconderBarraLateral () {
-    if (this.scrollY === lastScrollTop) return;
-    
-    checkBox.checked && this.scrollY > lastScrollTop ? checkBox.checked = false : checkBox.checked
-    lastScrollTop = this.scrollY;
+const bloquearRolagem = () => {
+    const html = document.getElementById('html')
+    checkBox.checked == true? html.style.overflowY = 'hidden' : html.style.overflowY = 'scroll'  
 }
+
+const liberarRolagem = () => {
+    checkBox.checked = false
+    html.style.overflowY = 'scroll' 
+}
+
+checkBox.addEventListener('change', bloquearRolagem)
 
 /* Slider */
 
 let time = 2000, 
-    currentImageIndex = 0,
-    images = document.querySelectorAll('.slider img'),
-    max = images.length
+    imagemAtual = 0,
+    imagens = document.querySelectorAll('.slider img'),
+    max = imagens.length
 
 function proximaImagem () {
 
-    images[currentImageIndex].classList.remove('selected')
+    imagens[imagemAtual].classList.remove('selected')
 
-    currentImageIndex ++
+    imagemAtual ++
 
-    currentImageIndex = currentImageIndex >= max ? 0 : currentImageIndex
-    images[currentImageIndex].classList.add('selected')
+    imagemAtual = imagemAtual >= max ? 0 : imagemAtual
+    imagens[imagemAtual].classList.add('selected')
 
 }
 
@@ -35,3 +37,47 @@ function start () {
 }
 
 window.addEventListener('load', start)
+
+/* Combos */
+
+/* const combos = [
+    {
+        img: `<img src="" alt="Foto combo">`,
+        nome : "combo Cfms",
+        preco: 1000
+    },
+    {
+        img: `<img src="" alt="Foto combo">`,
+        nome : "combo Master",
+        preco : 5000
+    },
+    {
+        img: `<img src="" alt="Foto combo">`,
+        nome : "combo estadual",
+        preco : 500
+    },
+    {
+        img: `<img src="" alt="Foto combo individual">`,
+        nome : "combo individual",
+        preco : 300
+    }
+]
+
+
+function inicializarCombos () {
+    let cardsCombo = document.getElementById('containerProdutos')
+    combos.map(combos => {
+        cardsCombo.innerHTML += `
+            <div class= "produto">
+
+            <img src="" alt="Foto combo individual">
+            <h2>Combo: `+combos.nome+`</h2>
+            <p> preco: R$`+combos.preco+`</p>
+
+            </div>
+        `;
+
+    })
+}
+
+inicializarCombos() */
